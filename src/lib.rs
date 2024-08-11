@@ -1,10 +1,14 @@
 /// Repeat whatever is put in.
-pub fn echo(s: &str) -> &str {
+pub fn echo<T: ?Sized>(s: &T) -> &T {
+    // TODO change so that it returns all elements as one concatenated String
     s
 }
 
 /// Run the application.
-pub fn run() {}
+pub fn run(vec_str: &[String]) {
+    let echoes = echo(vec_str);
+    println!("{:?}", echoes);
+}
 
 #[test]
 fn one_word() {
