@@ -5,9 +5,9 @@ pub fn echo<T: ?Sized>(s: &T) -> &T {
 }
 
 /// Run the application.
-pub fn run(vec_str: &[String]) {
-    let echoes = echo(vec_str);
-    println!("{:?}", echoes);
+pub fn run(s: &str) {
+    let echoes = echo(s);
+    println!("{}", echoes);
 }
 
 #[test]
@@ -18,6 +18,26 @@ fn one_word() {
 #[test]
 fn two_words() {
     assert_eq!(echo("foo bar"), "foo bar");
+}
+
+#[test]
+fn multiple_words() {
+    assert_eq!(
+        echo("foo bar baz fkjdlshf098432whvds ofYq"),
+        "foo bar baz fkjdlshf098432whvds ofYq"
+    );
+}
+
+#[test]
+fn multiple_words_joined() {
+    let strs = [
+        String::from("foo"),
+        String::from("bar"),
+        String::from("baz"),
+        String::from("fkjdlshf098432whvds"),
+        String::from("ofYq"),
+    ];
+    assert_eq!(strs.join(" "), "foo bar baz fkjdlshf098432whvds ofYq");
 }
 
 #[test]

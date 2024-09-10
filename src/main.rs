@@ -3,6 +3,6 @@ use std::env;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
-    let echoes = &args[1..];
-    run(echoes);
+    let echo_str = args[1..].join(" ");
+    run(&echo_str);
 }
