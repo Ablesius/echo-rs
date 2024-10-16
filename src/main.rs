@@ -7,7 +7,7 @@ fn main() {
 }
 
 /// Echo the input.
-pub fn echo(strings: &[String]) -> String {
+fn echo(strings: &[String]) -> String {
     String::from(strings.join(" ").as_str())
 }
 
