@@ -32,7 +32,6 @@ fn echo(strings: Vec<String>) -> String {
 
 /// Echo the input but do not separate with a space.
 fn unseparated_echo(strings: Vec<String>) -> String {
-    // todo!("not implemented yet, try using without -s!")
     strings.join("")
 }
 
